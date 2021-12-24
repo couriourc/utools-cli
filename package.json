@@ -1,0 +1,45 @@
+{
+  "name": "utools-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "utools-cli": "./bin/www"
+  },
+  "scripts": {
+    "dev:comment": "start development",
+    "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
+
+    "create:type-module:comment": "when dev to create .d.ts file",
+    "create:type-module": "node dev-cli/dev-cli create-type",
+    
+    "create:src-module:comment": "when dev to create src-module file",
+    "create:src-module": "node dev-cli/dev-cli create",
+
+    "create:test-module:comment": "when dev to create test-module file",
+    "create:test-module": "node dev-cli/dev-cli create-test",
+    
+    "eslint":"",
+    "build:comment": "start build",
+    "build": "rm -rf lib && tsc --build"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "eslint": "^8.5.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.5.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "clear-console": "^1.1.0",
+    "commander": "^8.3.0",
+    "download-git-repo": "^3.0.2",
+    "inquirer": "^8.2.0",
+    "ora": "^6.0.1",
+    "shelljs": "^0.8.4"
+  }
+}

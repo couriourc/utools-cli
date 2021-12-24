@@ -1,0 +1,62 @@
+#!/bin/env node
+const { program } = require("commander");
+const fs = require("fs");
+const path = require("path");
+// const chalk = require("chalk");
+
+// 当前版本号
+const VERSION = `1.0.0`;
+// 横幅文件
+const BANNER_TEXT = `/**
+ *  @author      : couriourc 
+ *  @description : 
+ *  @complete    : false
+ *  @createDate  : ${new Date().toUTCString()}
+ *  @version     : ${VERSION}
+*/
+`;
+
+// let Logger = (message, type = "error") => {
+//   if (type === "error")
+//     return console.log(chalk.red.bold.bgWhite(`${message}`));
+//   if (type === "success")
+//     return console.log(chalk.green.bold.bgWhite(`${message}`));
+//   if (type === "log")
+//     return console.log(chalk.white.bold.bgWhite(`${message}`));
+// };
+
+//  创建 脚手架文件
+program
+  .command("create <src-module>")
+  .description("Create new moduleName form => utools-cli create moduleName")
+  .action(async (moduleName) => {
+    fs.writeFileSync(
+      path.join(__dirname, `../src/create/${moduleName}.ts`),
+      Buffer.from(BANNER_TEXT)
+    );
+    return;
+  });
+// 创建类型声明文件
+program
+  .command("create-type <type-module>")
+  .description("Create new typeName form => utools-cli create typeName")
+  .action(async (typeModuleName) => {
+    fs.writeFileSync(
+      path.join(__dirname, `../@type/${typeModuleName}.d.ts`),
+      Buffer.from(BANNER_TEXT)
+    );
+    return;
+  });
+// 创建 测试文件
+program
+  .command("create-test <test-module>")
+  .description("Create new testModule form => utools-cli create testModule")
+  .action(async (testModuleName) => {
+    fs.writeFileSync(
+      path.join(__dirname, `../@type/${testModuleName}.test.ts`),
+      Buffer.from(BANNER_TEXT)
+    );
+    return;
+  });
+
+program.parse(process.argv);
