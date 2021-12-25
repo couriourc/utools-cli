@@ -5,8 +5,7 @@ import { main } from "./create/index";
 program
     .version(`${pkg.version}`,'-v --version')
     .usage('<command> [options]');
-
-
+// create plugin project
 program
     .command('create <plugin-name>')
     .description('Create new plugin form => utools-cli create yourProjectName')
@@ -15,4 +14,4 @@ program
     });
 
 program
-    .parse( process.argv )
+    .parse( process.argv );

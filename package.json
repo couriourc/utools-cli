@@ -9,17 +9,12 @@
   "scripts": {
     "dev:comment": "start development",
     "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
-
     "create:type-module:comment": "when dev to create .d.ts file",
     "create:type-module": "node dev-cli/dev-cli create-type",
-    
     "create:src-module:comment": "when dev to create src-module file",
     "create:src-module": "node dev-cli/dev-cli create",
-
     "create:test-module:comment": "when dev to create test-module file",
     "create:test-module": "node dev-cli/dev-cli create-test",
-    
-    "eslint":"",
     "build:comment": "start build",
     "build": "rm -rf lib && tsc --build"
   },
@@ -28,6 +23,7 @@
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
     "eslint": "^8.5.0",
+    "fs": "^0.0.1-security",
     "husky": "^7.0.4",
     "prettier": "^2.5.1",
     "ts-node-dev": "^1.1.8",
