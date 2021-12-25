@@ -1,10 +1,11 @@
 {
-  "name": "utools-cli",
+  "name": "utools-toolers",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "author": "couriorc",
   "bin": {
-    "utools-cli": "./bin/www"
+    "utools-toolers": "./bin/www"
   },
   "scripts": {
     "dev:comment": "start development",

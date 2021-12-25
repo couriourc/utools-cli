@@ -7,7 +7,8 @@ function createDir(dirName: string): void {
 }
 
 function isExistsPath(path: string): boolean {
-    return false
+    const isExist = fs.existsSync(path)
+    return isExist;
 }
 
 function getRawType(target: unknown): string {
@@ -16,8 +17,13 @@ function getRawType(target: unknown): string {
 
     return rawTypeReg.exec(targetTypeString)[1];
 }
+function getCurExecPath() {
+    return process.cwd();
+}
+
 export {
     createDir,
     getRawType,
-    isExistsPath
+    isExistsPath,
+    getCurExecPath
 }

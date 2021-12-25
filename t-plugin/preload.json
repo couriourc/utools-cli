@@ -1,0 +1,78 @@
+
+// 20211225182358
+// http://u.tools/docs/plugin.json
+{
+  "main": "index.html", // 入口文件，当该配置为空时，表示插件为模板插件。 main 与 preload 至少存在其一
+  "preload": "preload.js",//这是一个关键文件，你可以在此文件内调用 uTools、 nodejs、 electron 提供的 api。 
+  "logo": "logo.png",//  插件支持的平台，此为可选项，默认为全平台支持
+  
+  
+  "platform": [
+    "win32",
+    "darwin",
+    "linux"
+  ],
+  "development": {
+    "main": ""
+  },
+  "pluginSetting": {
+    "single": true,
+    "height": 0
+  },
+  "features": [
+    {
+      "code": "uuid",
+      "explain": "随机唯一值",
+      "icon": "res/xxxx.png",
+      "platform": [
+        "win32",
+        "darwin",
+        "linux"
+      ],
+      "cmds": [
+        "uTools",
+        "中文",
+        {
+          "type": "img",
+          "label": "图片匹配"
+        },
+        {
+          "type": "files",
+          "label": "文件匹配",
+          "fileType": "file",
+          "match": "/xxx/",
+          "minLength": 1,
+          "maxLength": 1
+        },
+        {
+          "type": "regex",
+          "label": "文本正则匹配",
+          "match": "/xxx/i",
+          "minLength": 1,
+          "maxLength": 1
+        },
+        {
+          "type": "over",
+          "label": "无匹配时",
+          "exclude": "/xxx/i",
+          "minLength": 1,
+          "maxLength": 1
+        },
+        {
+          "type": "window",
+          "label": "窗口动作",
+          "match": {
+            "app": [
+              "xxx.app",
+              "xxx.exe"
+            ],
+            "title": "/xxxx/",
+            "class": [
+              "xxx"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,6 @@
  * @date        : 2021-12-24 21:45
  * @complete    : false
 */
-
 type emptyCallback = () => void | string | [] | object;
 type paramsCallback<T> = (callbackParams: T) => void | string | [] | object;
 
@@ -63,10 +62,25 @@ interface userPayments {
 }
 declare namespace utools {
     // 生命周期模块 
+    /**
+     * @param {emptyCallback} callback not params 
+     * @returns not any
+     * */
     function onPluginReady(callback: emptyCallback);
-
+    /**
+     * @param {paramsCallback} 
+     * @returns void
+    */
     function onPluginEnter(callback: paramsCallback<onPluginEnterParams>);
+    /**
+     * @param {emptyCallback} callback not params 
+     * @returns not any
+     * */
     function onPluginOut(callback: emptyCallback);
+    /**
+     * @param {emptyCallback} callback not params 
+     * @returns not any
+     * */
     function onPluginDetach(callback: emptyCallback);
     // 窗口控制类型
     function hideMainWindow(isRestorePreWindow: boolean): boolean;
@@ -170,4 +184,5 @@ declare namespace utools {
     let ubrowser: ubrowser;
     let db: db;
     let dbStorage: dbStorage;
+
 }

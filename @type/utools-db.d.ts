@@ -5,6 +5,7 @@
  *  @createDate  : Sat, 25 Dec 2021 04:00:21 GMT
  *  @version     : 1.0.0
 */
+
 declare interface db {
     get(id: string): { _id: string, _rev: string, data: string }
     remove(doc: string | object): {
